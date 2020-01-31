@@ -1,14 +1,12 @@
 // Imports
 import express from 'express'
-import path from 'path'
+
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import morgan from 'morgan'
 
-//import router from "./router"
-
-// Load express modules
+import router from "./router"
 
 const server = (server) => {
     console.info('SETUP - Loading modules...')
@@ -25,13 +23,8 @@ const server = (server) => {
 
     server.use(morgan('tiny'))
 
-    server.get("/", (req, res)=> {
-        console.log(req);
-        res.send(200, 'Connection route par defaut ok');
-    })
-
     // Initializing our routes
-    //router(server);
+    router(server);
 }
 
 export default server;

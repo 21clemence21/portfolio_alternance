@@ -11,8 +11,6 @@ import databaseConnection from './setup/database'
 // Create express server
 const server = express()
 
-// Setup database
-databaseConnection
 
 // Setup server
 setupServer(server)
